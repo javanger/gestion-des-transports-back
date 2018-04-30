@@ -20,7 +20,7 @@ public class VehiculeController {
 	private VehiculeRepository vehiculeRepository;
 
 	@GetMapping
-	public List<Vehicule> listerCollegues() {
+	public List<Vehicule> listerVehicules() {
 		return this.vehiculeRepository.findAll();
 	}
 
