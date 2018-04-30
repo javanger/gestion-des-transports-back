@@ -12,5 +12,4 @@ import dev.gtb.entite.AnnonceCovoiturage;
  *
  */
 public interface AnnonceCovoiturageRepository extends JpaRepository<AnnonceCovoiturage, Integer> {
-
 }
