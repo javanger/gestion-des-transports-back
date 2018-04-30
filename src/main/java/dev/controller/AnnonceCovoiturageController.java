@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.gtb.entite.AnnonceCovoiturage;
-import dev.gtb.repository.VehiculeRepository;
+import dev.entite.AnnonceCovoiturage;
 import dev.repository.AnnonceCovoiturageRepository;
 import dev.repository.ReservationRepository;
+import dev.repository.VehiculeRepository;
 
 /**
  * @author GOBERT Guillaume

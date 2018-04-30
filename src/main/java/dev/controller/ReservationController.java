@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.gtb.entite.Reservation;
+import dev.entite.Reservation;
 import dev.repository.AnnonceCovoiturageRepository;
 import dev.repository.CollaborateurRepository;
 import dev.repository.ReservationRepository;

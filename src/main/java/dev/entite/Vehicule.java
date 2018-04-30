@@ -1,4 +1,4 @@
-package dev.gtb.entite;
+package dev.entite;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

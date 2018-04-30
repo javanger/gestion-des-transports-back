@@ -1,4 +1,4 @@
-package dev.gtb.service;
+package dev.service;
 
 public interface InitialiserDonneesService {
 	

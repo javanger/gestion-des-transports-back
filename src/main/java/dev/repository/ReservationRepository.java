@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import dev.gtb.entite.Reservation;
+import dev.entite.Reservation;
 
 /**
  * @author ETY0004
