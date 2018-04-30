@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dev.gtb.entite;
+package dev.entite;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
