@@ -1,4 +1,4 @@
-package dev.gtb.entite;
+package dev.entite;
 
 public enum CategorieVehicule {
 

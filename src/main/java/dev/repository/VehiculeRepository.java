@@ -1,8 +1,8 @@
-package dev.gtb.repository;
+package dev.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import dev.gtb.entite.Vehicule;
+import dev.entite.Vehicule;
 
 public interface VehiculeRepository extends JpaRepository<Vehicule, Integer> {
 

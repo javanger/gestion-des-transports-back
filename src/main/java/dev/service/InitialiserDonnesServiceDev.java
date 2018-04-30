@@ -1,4 +1,4 @@
-package dev.gtb.service;
+package dev.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,9 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dev.gtb.entite.CategorieVehicule;
-import dev.gtb.entite.Vehicule;
-import dev.gtb.repository.VehiculeRepository;
+import dev.entite.CategorieVehicule;
+import dev.entite.Vehicule;
+import dev.repository.VehiculeRepository;
 
 @Service
 public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
