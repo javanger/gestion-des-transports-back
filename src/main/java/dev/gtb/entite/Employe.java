@@ -19,7 +19,7 @@ public abstract class Employe {
 
 	@Id
 	@Column(name = "MATRICULE")
-	private String matricule;
+	private Integer matricule;
 	@Column(name = "NOM")
 	private String nom;
 	@Column(name = "PRENOM")
@@ -44,18 +44,8 @@ public abstract class Employe {
 	 * 
 	 * @return the matricule
 	 */
-	public String getMatricule() {
+	public Integer getMatricule() {
 		return matricule;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param matricule
-	 *            the matricule to set
-	 */
-	public void setMatricule(String matricule) {
-		this.matricule = matricule;
 	}
 
 	/**

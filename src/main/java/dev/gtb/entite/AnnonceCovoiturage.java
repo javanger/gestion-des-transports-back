@@ -50,6 +50,9 @@ public class AnnonceCovoiturage {
 	@OneToMany
 	private List<Reservation> reservations;
 
+	public AnnonceCovoiturage() {
+	}
+
 	public AnnonceCovoiturage(String adresseDepart, String adresseArrive, Integer duree, Double distance,
 			Vehicule vehicule, Integer nombrePlace, LocalDate date, Collaborateur auteurAnnonce,
 			List<Reservation> reservations) {
@@ -71,16 +74,6 @@ public class AnnonceCovoiturage {
 	 */
 	public Integer getId() {
 		return id;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	/**
