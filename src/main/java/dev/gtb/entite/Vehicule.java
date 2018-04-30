@@ -54,6 +54,19 @@ public class Vehicule {
 		this.urlPhoto = urlPhoto;
 	}
 
+	// public Vehicule(String immatriculation, String marque, String modele,
+	// String categorie, Integer nbPlaces,
+	// String urlPhoto) {
+	// // TODO Auto-generated constructor stub
+	// super();
+	// this.immatriculation = immatriculation;
+	// this.marque = marque;
+	// this.modele = modele;
+	// this.nbPlaces = nbPlaces;
+	// this.categorie = categorie;
+	// this.urlPhoto = urlPhoto;
+	// }
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -147,6 +160,7 @@ public class Vehicule {
 	 * @return the categorie
 	 */
 	public CategorieVehicule getCategorie() {
+
 		return categorie;
 	}
 

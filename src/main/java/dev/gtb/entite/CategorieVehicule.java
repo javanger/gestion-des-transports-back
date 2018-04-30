@@ -5,7 +5,7 @@ public enum CategorieVehicule {
 	MICRO_URBAINE("Micro-urbaines"), 
 	MINI_CITADINE("Mini-citadines"), 
 	CITADINE_POLYVALENTE("Citadines polyvalentes"), 
-	COMPACTE("Compactes"), 
+	COMPACTE("Compacte"), 
 	BERLINE_TAILLE_S("Berline Taille S"), 
 	BERLINE_TAILLE_M("Berline Taille M"), 
 	BERLINE_TAILLE_L("Berline Taille L"), 
