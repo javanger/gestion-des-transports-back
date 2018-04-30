@@ -1,5 +1,8 @@
 package dev.gtb.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -7,7 +10,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import dev.gtb.entite.Administrateur;
 import dev.gtb.entite.CategorieVehicule;
+import dev.gtb.entite.Chauffeur;
+import dev.gtb.entite.Collaborateur;
 import dev.gtb.entite.Vehicule;
 import dev.gtb.repository.VehiculeRepository;
 
@@ -43,9 +49,27 @@ public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
 		vehiculeRepo.save(voiture5);
 		vehiculeRepo.save(voiture6);
 
+		List<Chauffeur> listeChauffeur = new ArrayList<Chauffeur>();
 
+		listeChauffeur.add(new Chauffeur("Corentin", "courvite", "c.courvite@gmail.com", "06 40 42 89 78",
+				"https://www.closermag.fr/var/closermag/storage/images/article/michael-fassbender-je-suis-une-personne-totalement-stupide-!-723590/5691650-1-fre-FR/Michael-Fassbender-Je-suis-une-personne-totalement-stupide-!.jpg",
+				true));
 
+		listeChauffeur.forEach(em::persist);
 
+		List<Collaborateur> listeCollaborateur = new ArrayList<Collaborateur>();
 
-}
+		listeCollaborateur.add(new Collaborateur("Paul", "ar", "p.ar@gmail.com", "06 40 28 29 22",
+				"http://www.lepoint.fr/images/2017/07/21/9487508lpw-9488117-article-paul-ricoeur-jpg_4440299_1250x625.jpg"));
+
+		listeCollaborateur.forEach(em::persist);
+		List<Administrateur> listeAdministrateur = new ArrayList<Administrateur>();
+
+		listeAdministrateur.add(new Administrateur("Gerard", "menvu", "gmenvu@gmail.com", "02 04 06 08 10",
+				"https://o.aolcdn.com/images/dims3/GLOB/crop/3494x1751+0+263/resize/630x315!/format/jpg/quality/85/http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F5f7b78997fded4fe2973e04d09d146f0%2F206140087%2FRTX3ETVB.jpeg"));
+
+		listeAdministrateur.forEach(em::persist);
+
+	}
+
 }
