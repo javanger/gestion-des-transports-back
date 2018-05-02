@@ -1,18 +1,16 @@
 package dev.entite;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-@Table(name = "VEHICULE")
-
-public class Vehicule {
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Vehicule {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,44 +26,19 @@ public class Vehicule {
 	@Column(name = "MODELE")
 	private String modele;
 
-	@Column(name = "CATEGORIE")
-	@Enumerated(EnumType.STRING)
-	private CategorieVehicule categorie;
-
 	@Column(name = "NOMBRE_DE_PLACE")
 	private Integer nbPlaces;
 
-	@Column(name = "URL_PHOTO")
-	private String urlPhoto;
 
 	public Vehicule() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Vehicule(String immatriculation, String marque, String modele, CategorieVehicule categorie, Integer nbPlaces,
-			String urlPhoto) {
-		super();
+	public Vehicule(String immatriculation, String marque, String modele, Integer nbPlaces) {
 		this.immatriculation = immatriculation;
 		this.marque = marque;
 		this.modele = modele;
-		this.categorie = categorie;
 		this.nbPlaces = nbPlaces;
-		this.urlPhoto = urlPhoto;
 	}
-
-	// public Vehicule(String immatriculation, String marque, String modele,
-	// String categorie, Integer nbPlaces,
-	// String urlPhoto) {
-	// // TODO Auto-generated constructor stub
-	// super();
-	// this.immatriculation = immatriculation;
-	// this.marque = marque;
-	// this.modele = modele;
-	// this.nbPlaces = nbPlaces;
-	// this.categorie = categorie;
-	// this.urlPhoto = urlPhoto;
-	// }
 
 	/*
 	 * (non-Javadoc)
@@ -75,7 +48,7 @@ public class Vehicule {
 	@Override
 	public String toString() {
 		return "Vehicule [id=" + id + ", immatriculation=" + immatriculation + ", marque=" + marque + ", modele="
-				+ modele + ", categorie=" + categorie + ", nbPlaces=" + nbPlaces + ", urlPhoto=" + urlPhoto + "]";
+				+ modele + ", nbPlaces=" + nbPlaces + "]";
 	}
 
 	/**
@@ -154,25 +127,6 @@ public class Vehicule {
 		this.modele = modele;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the categorie
-	 */
-	public CategorieVehicule getCategorie() {
-
-		return categorie;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param categorie
-	 *            the categorie to set
-	 */
-	public void setCategorie(CategorieVehicule categorie) {
-		this.categorie = categorie;
-	}
 
 	/**
 	 * Getter
@@ -193,23 +147,5 @@ public class Vehicule {
 		this.nbPlaces = nbPlaces;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the urlPhoto
-	 */
-	public String getUrlPhoto() {
-		return urlPhoto;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param urlPhoto
-	 *            the urlPhoto to set
-	 */
-	public void setUrlPhoto(String urlPhoto) {
-		this.urlPhoto = urlPhoto;
-	}
 
 }
