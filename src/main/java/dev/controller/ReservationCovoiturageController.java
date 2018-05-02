@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.entite.Reservation;
+import dev.entite.ReservationCovoiturage;
 import dev.repository.AnnonceCovoiturageRepository;
 import dev.repository.CollaborateurRepository;
-import dev.repository.ReservationRepository;
+import dev.repository.ReservationCovoiturageRepository;
 
 /**
  * @author GOBERT Guillaume
@@ -24,35 +24,35 @@ import dev.repository.ReservationRepository;
  */
 @RestController
 @CrossOrigin
-public class ReservationController {
+public class ReservationCovoiturageController {
 
 	@Autowired
-	private ReservationRepository reservationRepo;
+	private ReservationCovoiturageRepository reservationCovoitRepo;
 	@Autowired
 	private AnnonceCovoiturageRepository annonceCovoitRepo;
 	@Autowired
 	private CollaborateurRepository collaborateurRepo;
 
 	@RequestMapping(method = RequestMethod.GET, path = "/reservations")
-	public List<Reservation> listerReservations() {
-		return reservationRepo.findAll();
+	public List<ReservationCovoiturage> listerReservations() {
+		return reservationCovoitRepo.findAll();
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, path = "/reservations/creer")
-	public void creerReservation(@RequestBody Reservation reservation) {
-		Reservation nouvelleReservation = new Reservation(reservation.getId(), reservation.getAnnonce(),
-				reservation.getCollaborateur());
+	public void creerReservation(@RequestBody ReservationCovoiturage reservation) {
+		ReservationCovoiturage nouvelleReservation = new ReservationCovoiturage(reservation.getId(),
+				reservation.getCollaborateur(), reservation.getAnnonce());
 		if (annonceCovoitRepo.getOne(nouvelleReservation.getAnnonce().getId()) != null
 				&& collaborateurRepo.findOne(nouvelleReservation.getCollaborateur().getMatricule()) != null) {
-			reservationRepo.save(nouvelleReservation);
+			reservationCovoitRepo.save(nouvelleReservation);
 		}
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/reservations/{id}")
-	public Reservation detailsReservations(@PathVariable Integer id) {
-		Reservation detailReservation = new Reservation();
-		if (reservationRepo.findOne(id) != null) {
-			detailReservation = reservationRepo.findOne(id);
+	public ReservationCovoiturage detailsReservations(@PathVariable Integer id) {
+		ReservationCovoiturage detailReservation = new ReservationCovoiturage();
+		if (reservationCovoitRepo.findOne(id) != null) {
+			detailReservation = reservationCovoitRepo.findOne(id);
 		}
 		return detailReservation;
 	}

@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<bean id="vehicule1" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete1" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="22-ABCD-44"></property>
 		<property name="marque" value="Toyota"></property>
 		<property name="modele" value="Yaris"></property>
@@ -14,7 +14,7 @@
 		<property name="urlPhoto" value="http://www.envoiturecarine.fr/wp-content/uploads/2015/08/lamborghini-aventador.jpg"></property>
 	</bean>
 	
-	<bean id="vehicule2" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete2" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="54-ABCD-63"></property>
 		<property name="marque" value="Renault"></property>
 		<property name="modele" value="Megane"></property>
@@ -23,7 +23,7 @@
 		<property name="urlPhoto" value="https://cdn2.regie-agricole.com/ulf/TNM_Biblio/fiche_123456/fiches_tracteur_Arbos_lovol_6_cylindres.jpg"></property>
 	</bean>
 	
-	<bean id="vehicule3" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete3" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="23-ABCD-47"></property>
 		<property name="marque" value="Peugeot"></property>
 		<property name="modele" value="308"></property>
@@ -32,7 +32,7 @@
 		<property name="urlPhoto" value="http://www.mdanses.fr/images/category_8/Trotteur%20porteur%20%C3%A9lectronique%20Baby%20Smile%20King%20Jouet%20Porteurs%20Jouets%20%C3%A0%20bascules%20Baby%20Smile%20Jeux%20d%20%C3%A9veil.jpg"></property>
 	</bean>
 	
-	<bean id="vehicule4" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete4" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="69-ABCD-69"></property>
 		<property name="marque" value="Dacia"></property>
 		<property name="modele" value="Duster"></property>
@@ -41,7 +41,7 @@
 		<property name="urlPhoto" value="https://www.buzz2000.com/coloriage/voiture/coloriage-voiture-17364.JPG"></property>
 	</bean>
 	
-	<bean id="vehicule5" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete5" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="62-ABCD-44"></property>
 		<property name="marque" value="Volvo"></property>
 		<property name="modele" value="xc350"></property>
@@ -50,7 +50,7 @@
 		<property name="urlPhoto" value="http://www.antiqbrocdelatour.com/Les-collections/voitures-anciennes/1-images/Renault%20Type%20X%20Type%20X1.jpg"></property>
 	</bean>
 	
-	<bean id="vehicule6" class="dev.entite.Vehicule">
+	<bean id="vehiculeSociete6" class="dev.entite.VehiculeSociete">
 		<property name="immatriculation" value="59-ABCD-87"></property>
 		<property name="marque" value="Huyndai"></property>
 		<property name="modele" value="i20"></property>

@@ -7,7 +7,7 @@
 
 	<import resource="classpath:collaborateur.xml" />
 
-	<bean id="reservation1" class="dev.entite.Reservation">
+	<bean id="reservationCovoiturage1" class="dev.entite.ReservationCovoiturage">
 		<property name="annonce">
 			<ref bean="annonceCovoiturage1"/>
 		</property>
@@ -16,7 +16,7 @@
 		</property>
 	</bean>
 	
-	<bean id="reservation2" class="dev.entite.Reservation">
+	<bean id="reservationCovoiturage2" class="dev.entite.ReservationCovoiturage">
 		<property name="annonce">
 			<ref bean="annonceCovoiturage1"/>
 		</property>

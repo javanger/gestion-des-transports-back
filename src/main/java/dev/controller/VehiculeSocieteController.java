@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.entite.Vehicule;
-import dev.repository.VehiculeRepository;
+import dev.entite.VehiculeSociete;
+import dev.repository.VehiculeSocieteRepository;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/vehicules")
-public class VehiculeController {
+public class VehiculeSocieteController {
 
 	@Autowired
-	private VehiculeRepository vehiculeRepository;
+	private VehiculeSocieteRepository vehiculeSocieteRepository;
 
 	@GetMapping
-	public List<Vehicule> listerVehicules() {
-		return this.vehiculeRepository.findAll();
+	public List<VehiculeSociete> listerVehicules() {
+		return this.vehiculeSocieteRepository.findAll();
 	}
 
 	@RequestMapping(value = "/{immatriculation}", method = RequestMethod.GET)

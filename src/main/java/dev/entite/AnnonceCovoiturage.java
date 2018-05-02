@@ -37,7 +37,7 @@ public class AnnonceCovoiturage {
 	@Column(name = "DISTANCE")
 	private String distance;
 	@ManyToOne
-	private Vehicule vehicule;
+	private VehiculePersonnel vehiculePersonnel;
 	@Column(name = "NOMBRE_PLACE")
 	@Max(20)
 	@Min(1)
@@ -48,19 +48,19 @@ public class AnnonceCovoiturage {
 	@ManyToOne
 	private Collaborateur auteurAnnonce;
 	@OneToMany
-	private List<Reservation> reservations;
+	private List<ReservationCovoiturage> reservations;
 
 	public AnnonceCovoiturage() {
 	}
 
 	public AnnonceCovoiturage(String adresseDepart, String adresseArrive, String duree, String distance,
-			Vehicule vehicule, Integer nombrePlace, String date, Collaborateur auteurAnnonce,
-			List<Reservation> reservations) {
+			VehiculePersonnel vehiculePersonnel, Integer nombrePlace, String date, Collaborateur auteurAnnonce,
+			List<ReservationCovoiturage> reservations) {
 		this.adresseDepart = adresseDepart;
 		this.adresseArrive = adresseArrive;
 		this.duree = duree;
 		this.distance = distance;
-		this.vehicule = vehicule;
+		this.vehiculePersonnel = vehiculePersonnel;
 		this.nombrePlace = nombrePlace;
 		this.date = date;
 		this.auteurAnnonce = auteurAnnonce;
@@ -157,8 +157,8 @@ public class AnnonceCovoiturage {
 	 * 
 	 * @return the vehicule
 	 */
-	public Vehicule getVehicule() {
-		return vehicule;
+	public VehiculePersonnel getVehicule() {
+		return vehiculePersonnel;
 	}
 
 	/**
@@ -167,8 +167,8 @@ public class AnnonceCovoiturage {
 	 * @param vehicule
 	 *            the vehicule to set
 	 */
-	public void setVehicule(Vehicule vehicule) {
-		this.vehicule = vehicule;
+	public void setVehicule(VehiculePersonnel vehiculePersonnel) {
+		this.vehiculePersonnel = vehiculePersonnel;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class AnnonceCovoiturage {
 	 * 
 	 * @return the reservations
 	 */
-	public List<Reservation> getReservations() {
+	public List<ReservationCovoiturage> getReservations() {
 		return reservations;
 	}
 
@@ -243,7 +243,7 @@ public class AnnonceCovoiturage {
 	 * @param reservations
 	 *            the reservations to set
 	 */
-	public void setReservations(List<Reservation> reservations) {
+	public void setReservations(List<ReservationCovoiturage> reservations) {
 		this.reservations = reservations;
 	}
 

@@ -7,9 +7,10 @@
 	
 	<!-- importer une configuration dans une autre -->
 	<import resource="classpath:annonceCovoiturage.xml" />
-	<import resource="classpath:reservation.xml" />
+	<import resource="classpath:reservationCovoiturage.xml" />
 	<import resource="classpath:collaborateur.xml" />
-	<import resource="classpath:vehicule.xml" />
+	<import resource="classpath:vehiculeSociete.xml" />
+	<import resource="classpath:vehiculePersonnel.xml" />
 	<import resource="classpath:chauffeur.xml" />
 
 </beans>
