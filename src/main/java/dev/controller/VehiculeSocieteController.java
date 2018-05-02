@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.entite.Vehicule;
-import dev.repository.VehiculeRepository;
+import dev.entite.VehiculeSociete;
+import dev.repository.VehiculeSocieteRepository;
 
 @RestController
 @CrossOrigin
 @RequestMapping("/vehicules")
-public class VehiculeController {
+public class VehiculeSocieteController {
 
 	@Autowired
-	private VehiculeRepository vehiculeRepository;
+	private VehiculeSocieteRepository vehiculeSocieteRepository;
 
 	@GetMapping
-	public List<Vehicule> listerVehicules() {
-		return this.vehiculeRepository.findAll();
+	public List<VehiculeSociete> listerVehicules() {
+		return this.vehiculeSocieteRepository.findAll();
 	}
 
 	@PostMapping("/ajouter")
-	public Vehicule ajoutVehicule(@RequestBody Vehicule vehicule) {
-		Vehicule v = new Vehicule();
+	public VehiculeSociete ajoutVehicule(@RequestBody VehiculeSociete vehicule) {
+		VehiculeSociete v = new VehiculeSociete();
 		v.setImmatriculation(vehicule.getImmatriculation());
 		v.setMarque(vehicule.getMarque());
 		v.setModele(vehicule.getModele());
 		v.setNbPlaces(vehicule.getNbPlaces());
 		v.setCategorie(vehicule.getCategorie());
 		v.setUrlPhoto(vehicule.getUrlPhoto());
-		vehiculeRepository.save(v);
+		vehiculeSocieteRepository.save(v);
 
 		return v;
 

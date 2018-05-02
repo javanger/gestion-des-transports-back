@@ -19,7 +19,7 @@ public abstract class Employe {
 
 	@Id
 	@Column(name = "MATRICULE")
-	private Integer matricule;
+	private String matricule;
 	@Column(name = "NOM")
 	private String nom;
 	@Column(name = "PRENOM")
@@ -28,18 +28,20 @@ public abstract class Employe {
 	private String email;
 	@Column(name = "MOT_DE_PASSE")
 	private String motDePasse;
-	@Column(name = "TELEPHONE")
-	private String telephone;
 	@Column(name = "URL_PHOTO")
 	private String urlPhoto;
 
-	public Employe(String nom, String prenom, String email, String motDePasse, String telephone,
+	public Employe() {
+
+	}
+
+	public Employe(String matricule, String nom, String prenom, String email, String motDePasse,
 			String urlPhoto) {
+		this.matricule = matricule;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.motDePasse = motDePasse;
-		this.telephone = telephone;
 		this.urlPhoto = urlPhoto;
 	}
 
@@ -48,8 +50,18 @@ public abstract class Employe {
 	 * 
 	 * @return the matricule
 	 */
-	public Integer getMatricule() {
+	public String getMatricule() {
 		return matricule;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param nom
+	 *            the nom to set
+	 */
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
 	}
 
 	/**
@@ -112,25 +124,6 @@ public abstract class Employe {
 	/**
 	 * Getter
 	 * 
-	 * @return the telephone
-	 */
-	public String getTelephone() {
-		return telephone;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param telephone
-	 *            the telephone to set
-	 */
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-	/**
-	 * Getter
-	 * 
 	 * @return the urlPhoto
 	 */
 	public String getUrlPhoto() {
@@ -145,6 +138,21 @@ public abstract class Employe {
 	 */
 	public void setUrlPhoto(String urlPhoto) {
 		this.urlPhoto = urlPhoto;
+	}
+
+	/**
+	 * @return the motDePasse
+	 */
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+	/**
+	 * @param motDePasse
+	 *            the motDePasse to set
+	 */
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
 
 }
