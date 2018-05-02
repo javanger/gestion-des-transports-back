@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dev.gtb.entite;
+package dev.entite;
 
 import java.time.LocalDate;
 import java.util.List;

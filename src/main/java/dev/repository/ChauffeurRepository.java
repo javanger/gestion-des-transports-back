@@ -1,11 +1,11 @@
 /**
  * 
  */
-package dev.gtb.repository;
+package dev.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import dev.gtb.entite.Chauffeur;
+import dev.entite.Chauffeur;
 
 /**
  * @author Axel B.

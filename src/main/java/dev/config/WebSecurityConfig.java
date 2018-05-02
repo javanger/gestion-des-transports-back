@@ -32,7 +32,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin().permitAll();
+		http.authorizeRequests()
+				// .antMatchers("/collaborateur/**")
+				// .access("hasRole('ROLE_COLLABORATEUR') and
+				// hasRole('ROLE_ADMIN')").antMatchers("/admin/**")
+				// .hasRole("ADMINISTRATEUR").antMatchers("/chauffeur/**")
+				// .access("hasRole('ROLE_CHAUFFEUR') and
+				// hasRole('ROLE_ADMIN')")
+				.anyRequest().authenticated().and().formLogin().permitAll();
 
 	}
 
@@ -40,10 +47,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception
 
 	{
-		auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder)
-				.usersByUsernameQuery(
-						"SELECT NOM_UTILISATEUR, MOT_DE_PASSE, EST_ACTIF from UTILISATEUR where NOM_UTILISATEUR=?")
-				.authoritiesByUsernameQuery("select NOM_UTILISATEUR,ROLE from UTILISATEUR where NOM_UTILISATEUR = ?");
+		auth.jdbcAuthentication().dataSource(dataSource)
+				.usersByUsernameQuery("select c.email, c.mot_de_passe , 'true' from collaborateur c where c.email=?")
+				.authoritiesByUsernameQuery(
+						"select ch.email,ch.mot_de_passe, 'true' from chauffeur ch  where ch.email=?");
 	}
 
 	@Bean

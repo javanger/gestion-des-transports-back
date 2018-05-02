@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dev.gtb.entite.Chauffeur;
-import dev.gtb.repository.ChauffeurRepository;
+import dev.entite.Chauffeur;
+import dev.repository.ChauffeurRepository;
 
 /**
  * @author Axel B.

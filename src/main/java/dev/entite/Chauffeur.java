@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dev.gtb.entite;
+package dev.entite;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +17,8 @@ public class Chauffeur extends Employe {
 	private Boolean permis;
 
 	
-	public Chauffeur(String nom, String prenom, String email, String telephone, String urlPhoto, Boolean permis) {
-		super(nom, prenom, email, telephone, urlPhoto);
+	public Chauffeur(String nom, String prenom, String email,String motDePasse, String telephone, String urlPhoto, Boolean permis) {
+		super(nom, prenom, email, motDePasse, telephone, urlPhoto);
 		this.permis = permis;
 	}
 

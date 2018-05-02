@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dev.gtb.entite;
+package dev.entite;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -29,15 +29,18 @@ public abstract class Employe {
 	private String prenom;
 	@Column(name = "EMAIL")
 	private String email;
+	@Column(name = "MOT_DE_PASSE")
+	private String motDePasse;
 	@Column(name = "TELEPHONE")
 	private String telephone;
 	@Column(name = "URL_PHOTO")
 	private String urlPhoto;
 
-	public Employe(String nom, String prenom, String email, String telephone, String urlPhoto) {
+	public Employe(String nom, String prenom, String email, String motDePasse, String telephone, String urlPhoto) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
+		this.motDePasse = motDePasse;
 		this.telephone = telephone;
 		this.urlPhoto = urlPhoto;
 	}

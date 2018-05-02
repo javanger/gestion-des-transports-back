@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.gtb.entite.Vehicule;
-import dev.gtb.repository.VehiculeRepository;
+import dev.entite.Vehicule;
+import dev.repository.VehiculeRepository;
 
 @CrossOrigin
 @RestController
@@ -20,7 +20,7 @@ public class VehiculeController {
 	private VehiculeRepository vehiculeRepository;
 
 	@GetMapping
-	public List<Vehicule> listerCollegues() {
+	public List<Vehicule> listerVehicules() {
 		return this.vehiculeRepository.findAll();
 	}
 
