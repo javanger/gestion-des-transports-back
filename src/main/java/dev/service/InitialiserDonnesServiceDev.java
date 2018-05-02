@@ -13,14 +13,15 @@ import dev.entite.AnnonceCovoiturage;
 import dev.entite.Chauffeur;
 import dev.entite.Collaborateur;
 import dev.entite.ReservationCovoiturage;
+import dev.entite.ReservationVehiculeSociete;
 import dev.entite.VehiculePersonnel;
 import dev.entite.VehiculeSociete;
+
 
 @Service
 public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
 	@PersistenceContext
 	private EntityManager em;
-
 
 	@Override
 	@Transactional
@@ -29,7 +30,7 @@ public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("configWeb.xml");
 
 		Stream.of(Collaborateur.class, Chauffeur.class, AnnonceCovoiturage.class, ReservationCovoiturage.class,
-				VehiculePersonnel.class, VehiculeSociete.class)
+				ReservationVehiculeSociete.class, VehiculePersonnel.class, VehiculeSociete.class)
 				.flatMap(classe -> context.getBeansOfType(classe).values().stream()).forEach(em::persist);
 		context.close();
 
