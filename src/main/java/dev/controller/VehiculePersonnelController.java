@@ -5,23 +5,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.entite.Vehicule;
-import dev.repository.VehiculeRepository;
+import dev.entite.VehiculePersonnel;
+import dev.repository.VehiculePersonnelRepository;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/vehicules")
-public class VehiculeController {
+public class VehiculePersonnelController {
 
 	@Autowired
-	private VehiculeRepository vehiculeRepository;
+	private VehiculePersonnelRepository vehiculePersonnelRepository;
 
 	@GetMapping
-	public List<Vehicule> listerVehicules() {
-		return this.vehiculeRepository.findAll();
+	public List<VehiculePersonnel> listerVehicules() {
+		return this.vehiculePersonnelRepository.findAll();
 	}
 
 }

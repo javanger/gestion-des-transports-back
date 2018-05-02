@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dev.entite.AnnonceCovoiturage;
 import dev.repository.AnnonceCovoiturageRepository;
-import dev.repository.ReservationRepository;
-import dev.repository.VehiculeRepository;
+import dev.repository.ReservationCovoiturageRepository;
+import dev.repository.VehiculePersonnelRepository;
 
 /**
  * @author GOBERT Guillaume
@@ -29,9 +29,9 @@ public class AnnonceCovoiturageController {
 	@Autowired
 	private AnnonceCovoiturageRepository annonceCovoitRepo;
 	@Autowired
-	private ReservationRepository reservationRepo;
+	private ReservationCovoiturageRepository reservationCovoiturageRepo;
 	@Autowired
-	private VehiculeRepository vehiculeRepo;
+	private VehiculePersonnelRepository vehiculeRepo;
 
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces")
 	public List<AnnonceCovoiturage> listerAnnonces() {
