@@ -3,10 +3,11 @@
  */
 package dev.repository;
 
-import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import dev.entite.Collaborateur;
 import dev.entite.Reservation;
 
 /**
@@ -15,4 +16,5 @@ import dev.entite.Reservation;
  */
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
 
+	List<Reservation> findByCollaborateur(Collaborateur collab);
 }
