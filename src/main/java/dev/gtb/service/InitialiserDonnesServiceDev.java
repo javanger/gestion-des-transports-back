@@ -42,10 +42,5 @@ public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
 		vehiculeRepo.save(voiture4);
 		vehiculeRepo.save(voiture5);
 		vehiculeRepo.save(voiture6);
-
-
-
-
-
-}
+	}
 }
