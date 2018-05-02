@@ -6,15 +6,12 @@ package dev.config;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * @author Axel B.
@@ -26,20 +23,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private PasswordEncoder passwordEncoder;
-	@Autowired
 	private DataSource dataSource;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				// .antMatchers("/collaborateur/**")
-				// .access("hasRole('ROLE_COLLABORATEUR') and
-				// hasRole('ROLE_ADMIN')").antMatchers("/admin/**")
-				// .hasRole("ADMINISTRATEUR").antMatchers("/chauffeur/**")
-				// .access("hasRole('ROLE_CHAUFFEUR') and
-				// hasRole('ROLE_ADMIN')")
-				.anyRequest().authenticated().and().formLogin().permitAll();
+		http.authorizeRequests().antMatchers("/collaborateur/**")
+				.access("hasRole('ROLE_COLLABORATEUR') and  hasRole('ROLE_ADMIN')").antMatchers("/admin/**")
+				.hasRole("ADMINISTRATEUR").antMatchers("/chauffeur/**")
+				.access("hasRole('ROLE_CHAUFFEUR') and	 hasRole('ROLE_ADMIN')").anyRequest().authenticated().and()
+				.formLogin().loginPage("http://localhost:4200/connexion").permitAll();
 
 	}
 
@@ -48,14 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	{
 		auth.jdbcAuthentication().dataSource(dataSource)
-				.usersByUsernameQuery("select c.email, c.mot_de_passe , 'true' from collaborateur c where c.email=?")
+				.usersByUsernameQuery("SELECT EMAIL, MOT_DE_PASSE, 'true' FROM COLLABORATEUR WHERE EMAIL=?")
 				.authoritiesByUsernameQuery(
-						"select ch.email,ch.mot_de_passe, 'true' from chauffeur ch  where ch.email=?");
-	}
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
+						"SELECT EMAIL, MOT_DE_PASSE,ADMINISTRATEUR FROM COLLABORATEUR WHERE EMAIL=?");
 	}
 
 }
