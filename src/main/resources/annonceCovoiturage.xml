@@ -5,9 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
-	<import resource="classpath:vehicule.xml" />
+	<import resource="classpath:vehiculePersonnel.xml" />
 	<import resource="classpath:collaborateur.xml" />
-	<import resource="classpath:reservation.xml" />
+	<import resource="classpath:reservationCovoiturage.xml" />
 	
 	
 	<bean id="annonceCovoiturage1" class="dev.entite.AnnonceCovoiturage">
@@ -16,7 +16,7 @@
 		<property name="duree" value="7 minutes"></property>
 		<property name="distance" value="2,7 km"></property>
 		<property name="vehicule">
-			<ref bean="vehicule3"/>
+			<ref bean="vehiculePersonnel3"/>
 		</property>
 		<property name="nombrePlace" value="3"></property>
 		<property name="date" value="02/04/2018 16:30"></property>
@@ -24,9 +24,9 @@
 			<ref bean="collaborateur2"/>
 		</property>
 		<property name="reservations">
-			<util:list value-type="dev.entite.Reservation">
-				<ref bean="reservation1" />
-				<ref bean="reservation2" />
+			<util:list value-type="dev.entite.ReservationCovoiturage">
+				<ref bean="reservationCovoiturage1" />
+				<ref bean="reservationCovoiturage2" />
 			</util:list>
 		</property>
 	</bean>
@@ -37,7 +37,7 @@
 		<property name="duree" value="3 heures 42 minutes"></property>
 		<property name="distance" value="381 km"></property>
 		<property name="vehicule">
-			<ref bean="vehicule5"/>
+			<ref bean="vehiculePersonnel1"/>
 		</property>
 		<property name="nombrePlace" value="6"></property>
 		<property name="date" value="06/05/2018 11:11"></property>
@@ -45,7 +45,7 @@
 			<ref bean="collaborateur3"/>
 		</property>
 		<property name="reservations">
-			<util:list value-type="dev.entite.Reservation">
+			<util:list value-type="dev.entite.ReservationCovoiturage">
 			</util:list>
 		</property>
 	</bean>
