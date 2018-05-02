@@ -11,6 +11,6 @@ import dev.entite.Collaborateur;
  * @author Gobert Guillaume
  *
  */
-public interface CollaborateurRepository extends JpaRepository<Collaborateur, Integer> {
+public interface CollaborateurRepository extends JpaRepository<Collaborateur, String> {
 
 }

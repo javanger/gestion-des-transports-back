@@ -3,7 +3,6 @@
  */
 package dev.entite;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -34,17 +33,18 @@ public class AnnonceCovoiturage {
 	@Column(name = "ADRESSE_ARRIVE")
 	private String adresseArrive;
 	@Column(name = "DUREE")
-	private Integer duree;
+	private String duree;
 	@Column(name = "DISTANCE")
-	private Double distance;
+	private String distance;
 	@ManyToOne
 	private Vehicule vehicule;
 	@Column(name = "NOMBRE_PLACE")
 	@Max(20)
 	@Min(1)
 	private Integer nombrePlace;
+	/* Penser a remettre en LocalDate quand jeu de données inutile */
 	@Column(name = "DATE")
-	private LocalDate date;
+	private String date;
 	@ManyToOne
 	private Collaborateur auteurAnnonce;
 	@OneToMany
@@ -53,8 +53,8 @@ public class AnnonceCovoiturage {
 	public AnnonceCovoiturage() {
 	}
 
-	public AnnonceCovoiturage(String adresseDepart, String adresseArrive, Integer duree, Double distance,
-			Vehicule vehicule, Integer nombrePlace, LocalDate date, Collaborateur auteurAnnonce,
+	public AnnonceCovoiturage(String adresseDepart, String adresseArrive, String duree, String distance,
+			Vehicule vehicule, Integer nombrePlace, String date, Collaborateur auteurAnnonce,
 			List<Reservation> reservations) {
 		this.adresseDepart = adresseDepart;
 		this.adresseArrive = adresseArrive;
@@ -119,7 +119,7 @@ public class AnnonceCovoiturage {
 	 * 
 	 * @return the duree
 	 */
-	public Integer getDuree() {
+	public String getDuree() {
 		return duree;
 	}
 
@@ -129,7 +129,7 @@ public class AnnonceCovoiturage {
 	 * @param duree
 	 *            the duree to set
 	 */
-	public void setDuree(Integer duree) {
+	public void setDuree(String duree) {
 		this.duree = duree;
 	}
 
@@ -138,7 +138,7 @@ public class AnnonceCovoiturage {
 	 * 
 	 * @return the distance
 	 */
-	public Double getDistance() {
+	public String getDistance() {
 		return distance;
 	}
 
@@ -148,7 +148,7 @@ public class AnnonceCovoiturage {
 	 * @param distance
 	 *            the distance to set
 	 */
-	public void setDistance(Double distance) {
+	public void setDistance(String distance) {
 		this.distance = distance;
 	}
 
@@ -195,7 +195,7 @@ public class AnnonceCovoiturage {
 	 * 
 	 * @return the date
 	 */
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 
@@ -205,7 +205,7 @@ public class AnnonceCovoiturage {
 	 * @param date
 	 *            the date to set
 	 */
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
