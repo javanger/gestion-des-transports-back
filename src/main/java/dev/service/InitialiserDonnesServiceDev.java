@@ -17,9 +17,9 @@ import dev.entite.ReservationVehiculeSociete;
 import dev.entite.VehiculePersonnel;
 import dev.entite.VehiculeSociete;
 
-
 @Service
 public class InitialiserDonnesServiceDev implements InitialiserDonneesService {
+
 	@PersistenceContext
 	private EntityManager em;
 
