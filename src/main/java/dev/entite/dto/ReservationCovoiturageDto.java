@@ -4,16 +4,18 @@
 package dev.entite.dto;
 
 import dev.entite.Collaborateur;
+import dev.entite.Status;
 
 /**
  * @author GOBERT Guillaume
  *
  */
-public class ReservationDto {
+public class ReservationCovoiturageDto {
 
 	private Integer id;
 	private Collaborateur collaborateur;
 	private AnnonceCovoiturageDto annonce;
+	private Status statusReservation;
 
 	/**
 	 * Getter
@@ -70,6 +72,25 @@ public class ReservationDto {
 	 */
 	public void setAnnonce(AnnonceCovoiturageDto annonce) {
 		this.annonce = annonce;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the statusReservation
+	 */
+	public Status getStatusReservation() {
+		return statusReservation;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param statusReservation
+	 *            the statusReservation to set
+	 */
+	public void setStatusReservation(Status statusReservation) {
+		this.statusReservation = statusReservation;
 	}
 
 }

@@ -3,9 +3,6 @@
  */
 package dev.entite.dto;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import dev.entite.Collaborateur;
 import dev.entite.Vehicule;
 
@@ -14,17 +11,13 @@ import dev.entite.Vehicule;
  *
  */
 public class AnnonceCovoiturageDto {
-
+	
 	private Integer id;
 	private String adresseDepart;
 	private String adresseArrive;
-	private String duree;
-	private String distance;
 	private Vehicule vehicule;
-	private Integer nombrePlace;
-	private LocalDate date;
+	private String date;
 	private Collaborateur auteurAnnonce;
-	private List<ReservationDto> reservations;
 
 	/**
 	 * Getter
@@ -86,44 +79,6 @@ public class AnnonceCovoiturageDto {
 	/**
 	 * Getter
 	 * 
-	 * @return the duree
-	 */
-	public String getDuree() {
-		return duree;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param duree
-	 *            the duree to set
-	 */
-	public void setDuree(String duree) {
-		this.duree = duree;
-	}
-
-	/**
-	 * Getter
-	 * 
-	 * @return the distance
-	 */
-	public String getDistance() {
-		return distance;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param distance
-	 *            the distance to set
-	 */
-	public void setDistance(String distance) {
-		this.distance = distance;
-	}
-
-	/**
-	 * Getter
-	 * 
 	 * @return the vehicule
 	 */
 	public Vehicule getVehicule() {
@@ -143,28 +98,9 @@ public class AnnonceCovoiturageDto {
 	/**
 	 * Getter
 	 * 
-	 * @return the nombrePlace
-	 */
-	public Integer getNombrePlace() {
-		return nombrePlace;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param nombrePlace
-	 *            the nombrePlace to set
-	 */
-	public void setNombrePlace(Integer nombrePlace) {
-		this.nombrePlace = nombrePlace;
-	}
-
-	/**
-	 * Getter
-	 * 
 	 * @return the date
 	 */
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 
@@ -174,7 +110,7 @@ public class AnnonceCovoiturageDto {
 	 * @param date
 	 *            the date to set
 	 */
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -195,25 +131,6 @@ public class AnnonceCovoiturageDto {
 	 */
 	public void setAuteurAnnonce(Collaborateur auteurAnnonce) {
 		this.auteurAnnonce = auteurAnnonce;
-	}
-
-	/**
-	 * Getter
-	 * 
-	 * @return the reservations
-	 */
-	public List<ReservationDto> getReservations() {
-		return reservations;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param reservations
-	 *            the reservations to set
-	 */
-	public void setReservations(List<ReservationDto> reservations) {
-		this.reservations = reservations;
 	}
 
 }
