@@ -5,12 +5,14 @@ package dev.entite;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author ETY0004
  *
  */
 @Entity
+@Table(name = "CHAUFFEUR")
 public class Chauffeur extends Employe {
 
 	@Column(name = "PERMIS")
@@ -18,7 +20,6 @@ public class Chauffeur extends Employe {
 	@Column(name = "TELEPHONE")
 	private String telephone;
 
-	
 	public Chauffeur() {
 		super();
 	}
@@ -47,7 +48,7 @@ public class Chauffeur extends Employe {
 	public void setPermis(Boolean permis) {
 		this.permis = permis;
 	}
-	
+
 	/**
 	 * Getter
 	 * 

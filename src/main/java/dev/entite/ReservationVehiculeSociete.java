@@ -1,19 +1,18 @@
 package dev.entite;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "RESERVATION_VEHICULE_SOCIETE")
 public class ReservationVehiculeSociete extends Reservation {
 
-
 	@Column(name = "DATE_DEPART")
-	private LocalDate dateDepart;
+	private String dateDepart;
 	@Column(name = "DATE_RETOUR")
-	private LocalDate dateRetour;
+	private String dateRetour;
 	@ManyToOne
 	private VehiculeSociete vehiculeSociete;
 	@ManyToOne
@@ -23,8 +22,8 @@ public class ReservationVehiculeSociete extends Reservation {
 
 	}
 
-	public ReservationVehiculeSociete(Integer id, Collaborateur collaborateur, LocalDate dateDepart,
-			LocalDate dateRetour, VehiculeSociete vehiculeSociete, Chauffeur chauffeur) {
+	public ReservationVehiculeSociete(Integer id, Collaborateur collaborateur, String dateDepart, String dateRetour,
+			VehiculeSociete vehiculeSociete, Chauffeur chauffeur) {
 		super(id, collaborateur);
 		this.dateDepart = dateDepart;
 		this.dateRetour = dateRetour;
@@ -35,7 +34,7 @@ public class ReservationVehiculeSociete extends Reservation {
 	/**
 	 * @return the dateDepart
 	 */
-	public LocalDate getDateDepart() {
+	public String getDateDepart() {
 		return dateDepart;
 	}
 
@@ -43,14 +42,14 @@ public class ReservationVehiculeSociete extends Reservation {
 	 * @param dateDepart
 	 *            the dateDepart to set
 	 */
-	public void setDateDepart(LocalDate dateDepart) {
+	public void setDateDepart(String dateDepart) {
 		this.dateDepart = dateDepart;
 	}
 
 	/**
 	 * @return the dateRetour
 	 */
-	public LocalDate getDateRetour() {
+	public String getDateRetour() {
 		return dateRetour;
 	}
 
@@ -58,7 +57,7 @@ public class ReservationVehiculeSociete extends Reservation {
 	 * @param dateRetour
 	 *            the dateRetour to set
 	 */
-	public void setDateRetour(LocalDate dateRetour) {
+	public void setDateRetour(String dateRetour) {
 		this.dateRetour = dateRetour;
 	}
 

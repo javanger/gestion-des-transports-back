@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.entite.Vehicule;
 import dev.entite.VehiculeSociete;
 import dev.repository.VehiculeSocieteRepository;
 
@@ -28,7 +29,7 @@ public class VehiculeSocieteController {
 
 	@RequestMapping(value = "/{immatriculation}", method = RequestMethod.GET)
 	public Vehicule find(@PathVariable String immatriculation) {
-		return vehiculeRepository.findVehiculeByImmatriculation(immatriculation);
+		return vehiculeSocieteRepository.findVehiculeByImmatriculation(immatriculation);
 	}
 
 }

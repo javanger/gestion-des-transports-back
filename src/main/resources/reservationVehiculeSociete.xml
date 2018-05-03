@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+<import resource="classpath:chauffeur.xml" />
+<import resource="classpath:vehiculeSociete.xml" />
+ 
+	<bean id="reservationVehiculeSociete1" class="dev.entite.ReservationVehiculeSociete">
+		<property name="dateDepart" value="01/01/2018 9:11"></property>
+		<property name="dateRetour" value="03/01/2018 11:11"></property>
+		<property name="vehiculeSociete">
+			<ref bean="vehiculeSociete1" />
+		</property>
+		<property name="chauffeur">
+			<ref bean="chauffeur1" />
+		</property>
+	</bean>
+
+	<bean id="reservationVehiculeSociete2" class="dev.entite.ReservationVehiculeSociete">
+		<property name="dateDepart" value="02/03/2018 11:11"></property>
+		<property name="dateRetour" value="03/03/2018 18:00"></property>
+		<property name="vehiculeSociete">
+			<ref bean="vehiculeSociete1" />
+		</property>
+		<property name="chauffeur">
+			<ref bean="chauffeur1" />
+		</property>
+	</bean>
+
+	<bean id="reservationVehiculeSociete3" class="dev.entite.ReservationVehiculeSociete">
+		<property name="dateDepart" value="03/06/2018 9:45"></property>
+		<property name="dateRetour" value="06/06/2018 19:05"></property>
+		<property name="vehiculeSociete">
+			<ref bean="vehiculeSociete2" />
+		</property>
+		<property name="chauffeur">
+			<ref bean="chauffeur2" />
+		</property>
+	</bean>
+
+	<bean id="reservationVehiculeSociete4" class="dev.entite.ReservationVehiculeSociete">
+		<property name="dateDepart" value="04/07/2018 13:48"></property>
+		<property name="dateRetour" value="07/07/2018 18:56"></property>
+		<property name="vehiculeSociete">
+			<ref bean="vehiculeSociete2" />
+		</property>
+		<property name="chauffeur">
+			<ref bean="chauffeur2" />
+		</property>
+	</bean>
+
+
+
+</beans>
