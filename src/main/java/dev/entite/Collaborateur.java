@@ -16,28 +16,9 @@ public class Collaborateur extends Employe {
 	@Column(name = "ADMINISTRATEUR")
 	private Boolean administrateur;
 
-	public Collaborateur() {
-		super();
-	}
-
-	public Collaborateur(String matricule, String nom, String prenom, String email, String motDePasse, String urlPhoto,
+	public Collaborateur(String nom, String prenom, String email, String motDePasse, String telephone, String urlPhoto,
 			Boolean administrateur) {
-		super(matricule, nom, prenom, email, motDePasse, urlPhoto);
-		this.administrateur = administrateur;
-	}
-
-	/**
-	 * @return the administrateur
-	 */
-	public Boolean getAdministrateur() {
-		return administrateur;
-	}
-
-	/**
-	 * @param administrateur
-	 *            the administrateur to set
-	 */
-	public void setAdministrateur(Boolean administrateur) {
+		super(nom, prenom, email, motDePasse, telephone, urlPhoto);
 		this.administrateur = administrateur;
 	}
 

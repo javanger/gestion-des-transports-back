@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -49,13 +51,16 @@ public class AnnonceCovoiturage {
 	private Collaborateur auteurAnnonce;
 	@OneToMany
 	private List<ReservationCovoiturage> reservations;
+	@Column(name = "STATUS")
+	@Enumerated(EnumType.STRING)
+	private Status statusAnnonce;
 
 	public AnnonceCovoiturage() {
 	}
 
 	public AnnonceCovoiturage(String adresseDepart, String adresseArrive, String duree, String distance,
 			VehiculePersonnel vehiculePersonnel, Integer nombrePlace, String date, Collaborateur auteurAnnonce,
-			List<ReservationCovoiturage> reservations) {
+			List<ReservationCovoiturage> reservations, Status status) {
 		this.adresseDepart = adresseDepart;
 		this.adresseArrive = adresseArrive;
 		this.duree = duree;
@@ -65,6 +70,7 @@ public class AnnonceCovoiturage {
 		this.date = date;
 		this.auteurAnnonce = auteurAnnonce;
 		this.reservations = reservations;
+		this.statusAnnonce = status;
 	}
 
 	/**
@@ -245,6 +251,25 @@ public class AnnonceCovoiturage {
 	 */
 	public void setReservations(List<ReservationCovoiturage> reservations) {
 		this.reservations = reservations;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the statutAnnonce
+	 */
+	public Status getStatusAnnonce() {
+		return statusAnnonce;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param statutAnnonce
+	 *            the statutAnnonce to set
+	 */
+	public void setStatusAnnonce(Status statusAnnonce) {
+		this.statusAnnonce = statusAnnonce;
 	}
 
 }
