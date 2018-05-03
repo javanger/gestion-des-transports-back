@@ -4,6 +4,7 @@
 package dev.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,10 @@ public class AnnonceCovoiturageController {
 	private ModelMapper modelMapper;
 
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces")
-	public List<AnnonceCovoiturage> listerAnnonces() {
-		return annonceCovoitRepo.findAll();
+	public List<AnnonceCovoiturageDto> listerAnnonces() {
+		List<AnnonceCovoiturageDto> reservationsDto = annonceCovoitRepo.findAll().stream().map(r -> convertToDto(r))
+				.collect(Collectors.toList());
+		return reservationsDto;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
