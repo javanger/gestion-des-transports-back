@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<import resource="classpath:vehiculePersonnel.xml" />
+	<import resource="classpath:collaborateur.xml" />
+	<import resource="classpath:reservationCovoiturage.xml" />
+	
+	
+	<bean id="annonceCovoiturage1" class="dev.entite.AnnonceCovoiturage">
+		<property name="adresseDepart" value="Paseo de la Castellana, 12, 28046 Madrid, Espagne"></property>
+		<property name="adresseArrive" value="Paseo de la Castellana, 132, 28046 Madrid, Espagne"></property>
+		<property name="duree" value="7 minutes"></property>
+		<property name="distance" value="2,7 km"></property>
+		<property name="vehicule">
+			<ref bean="vehiculePersonnel3"/>
+		</property>
+		<property name="nombrePlace" value="3"></property>
+		<property name="date" value="02/04/2018 16:30"></property>
+		<property name="auteurAnnonce">
+			<ref bean="collaborateur2"/>
+		</property>
+		<property name="reservations">
+			<util:list value-type="dev.entite.ReservationCovoiturage">
+				<ref bean="reservationCovoiturage1" />
+				<ref bean="reservationCovoiturage2" />
+			</util:list>
+		</property>		
+		<property name="statusAnnonce" value="EN_COURS"></property>
+	</bean>
+	
+	<bean id="annonceCovoiturage2" class="dev.entite.AnnonceCovoiturage">
+		<property name="adresseDepart" value="Nantes, 44240 La Chapelle-sur-Erdre, France"></property>
+		<property name="adresseArrive" value="Rue de la Paix, 75002 Paris, France"></property>
+		<property name="duree" value="3 heures 42 minutes"></property>
+		<property name="distance" value="381 km"></property>
+		<property name="vehicule">
+			<ref bean="vehiculePersonnel1"/>
+		</property>
+		<property name="nombrePlace" value="6"></property>
+		<property name="date" value="06/05/2018 11:11"></property>
+		<property name="auteurAnnonce">
+			<ref bean="collaborateur3"/>
+		</property>
+		<property name="reservations">
+			<util:list value-type="dev.entite.ReservationCovoiturage">
+			</util:list>
+		</property>		
+		<property name="statusAnnonce" value="EN_COURS"></property>
+	</bean>
+
+</beans>

@@ -3,34 +3,33 @@
  */
 package dev.entite;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 
 /**
  * @author GOBERT Guillaume
  *
  */
-@Entity
-public class Reservation {
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Reservation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@ManyToOne
-	private AnnonceCovoiturage annonce;
 	@ManyToOne
 	private Collaborateur collaborateur;
 
 	public Reservation() {
 	}
 
-	public Reservation(Integer id, AnnonceCovoiturage annonce, Collaborateur collaborateur) {
-		super();
+	public Reservation(Integer id, Collaborateur collaborateur) {
 		this.id = id;
-		this.annonce = annonce;
 		this.collaborateur = collaborateur;
 	}
 
@@ -43,24 +42,6 @@ public class Reservation {
 		return id;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the annonce
-	 */
-	public AnnonceCovoiturage getAnnonce() {
-		return annonce;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param annonce
-	 *            the annonce to set
-	 */
-	public void setAnnonce(AnnonceCovoiturage annonce) {
-		this.annonce = annonce;
-	}
 
 	/**
 	 * Getter
