@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="collaborateur1" class="dev.entite.Collaborateur">
+		<property name="matricule" value="M001"></property>
+		<property name="nom" value="Ross"></property>
+		<property name="prenom" value="Roberts"></property>
+		<property name="email" value="robertsross@sultraxin.com"></property>
+		<property name="motDePasse" value="123"></property>
+		<property name="urlPhoto" value="https://randomuser.me/api/portraits/men/76.jpg"></property>
+		<property name="administrateur" value="true"></property>
+	</bean>
+	
+	<bean id="collaborateur2" class="dev.entite.Collaborateur">
+		<property name="matricule" value="M002"></property>
+		<property name="nom" value="Bullock"></property>
+		<property name="prenom" value="Jackson"></property>
+		<property name="email" value="jacksonbullock@sultraxin.com"></property>
+		<property name="motDePasse" value="456"></property>
+		<property name="urlPhoto" value="https://randomuser.me/api/portraits/men/90.jpg"></property>
+		<property name="administrateur" value="true"></property>
+	</bean>
+	
+	<bean id="collaborateur3" class="dev.entite.Collaborateur">
+		<property name="matricule" value="M003"></property>
+		<property name="nom" value="Odonnell"></property>
+		<property name="prenom" value="Jennifer"></property>
+		<property name="email" value="jenniferodonnell@sultraxin.com"></property>
+		<property name="motDePasse" value="789"></property>
+		<property name="urlPhoto" value="https://randomuser.me/api/portraits/women/51.jpg"></property>
+		<property name="administrateur" value="false"></property>
+	</bean>
+	
+	<bean id="collaborateur4" class="dev.entite.Collaborateur">
+		<property name="matricule" value="M004"></property>
+		<property name="nom" value="Pena"></property>
+		<property name="prenom" value="Moss"></property>
+		<property name="email" value="mosspena@sultraxin.com"></property>
+		<property name="motDePasse" value="abc"></property>
+		<property name="urlPhoto" value="https://randomuser.me/api/portraits/men/93.jpg"></property>
+		<property name="administrateur" value="false"></property>
+	</bean>
+	
+	<bean id="collaborateur5" class="dev.entite.Collaborateur">
+		<property name="matricule" value="M005"></property>
+		<property name="nom" value="Houston"></property>
+		<property name="prenom" value="Lelia"></property>
+		<property name="email" value="leliahouston@sultraxin.com"></property>
+		<property name="motDePasse" value="0000"></property>
+		<property name="urlPhoto" value="https://randomuser.me/api/portraits/women/12.jpg"></property>
+		<property name="administrateur" value="false"></property>
+	</bean>
+	
+
+</beans>
