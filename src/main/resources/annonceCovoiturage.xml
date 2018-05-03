@@ -28,7 +28,8 @@
 				<ref bean="reservationCovoiturage1" />
 				<ref bean="reservationCovoiturage2" />
 			</util:list>
-		</property>
+		</property>		
+		<property name="statusAnnonce" value="EN_COURS"></property>
 	</bean>
 	
 	<bean id="annonceCovoiturage2" class="dev.entite.AnnonceCovoiturage">
@@ -47,7 +48,8 @@
 		<property name="reservations">
 			<util:list value-type="dev.entite.ReservationCovoiturage">
 			</util:list>
-		</property>
+		</property>		
+		<property name="statusAnnonce" value="EN_COURS"></property>
 	</bean>
 
 </beans>
