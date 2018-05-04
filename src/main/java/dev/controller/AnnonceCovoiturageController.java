@@ -52,12 +52,14 @@ public class AnnonceCovoiturageController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
+
 	public List<AnnonceListeDto> listerAnnonces(@PathVariable String matriculeCollaborateur) {
 		List<AnnonceListeDto> annoncesDto = annonceCovoitRepo
 				.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur)).stream()
 				.map(r -> convertDto(r))
 				.collect(Collectors.toList());
 		return annoncesDto;
+
 	}
 
 	@RequestMapping(method = RequestMethod.POST, path = "/annonces/creer")
@@ -77,14 +79,31 @@ public class AnnonceCovoiturageController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/detail/annonces/{id}")
-	public AnnonceCovoiturage detailsAnnonce(@PathVariable Integer id) {
-		AnnonceCovoiturage detailAnnonce = new AnnonceCovoiturage();
+
+	public AnnonceCovoiturageDto detailsAnnonce(@PathVariable Integer id) {
+		AnnonceCovoiturageDto detailAnnonce = new AnnonceCovoiturageDto();
+
 		if (annonceCovoitRepo.findOne(id) != null) {
-			detailAnnonce = annonceCovoitRepo.findOne(id);
+			detailAnnonce = convertToDto(annonceCovoitRepo.findOne(id));
 		}
 		return detailAnnonce;
 	}
 	
+	@RequestMapping(method = RequestMethod.PUT, path = "status/annonces/{id}")
+	public void modifierStatut(@RequestBody AnnonceCovoiturageDto annonceDto) {
+
+		AnnonceCovoiturage modifierStatut = annonceCovoitRepo.findOne(annonceDto.getId());
+		modifierStatut.setStatusAnnonce(annonceDto.getStatus());
+		annonceCovoitRepo.save(modifierStatut);
+	}
+
+	@RequestMapping(method = RequestMethod.PUT, path = "/annonces/{id}")
+	public void modifierAnnonce(@RequestBody AnnonceCovoiturageDto annonceDto) {
+		AnnonceCovoiturage modifierAnnonce = annonceCovoitRepo.findOne(annonceDto.getId());
+		modifierAnnonce.setNombrePlace(annonceDto.getNombrePlace());
+		annonceCovoitRepo.save(modifierAnnonce);
+	}
+
 	private AnnonceCovoiturageDto convertToDto(AnnonceCovoiturage annonce) {
 		AnnonceCovoiturageDto annonceDto = modelMapper.map(annonce, AnnonceCovoiturageDto.class);
 		return annonceDto;

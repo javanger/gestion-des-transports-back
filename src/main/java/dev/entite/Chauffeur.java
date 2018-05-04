@@ -15,14 +15,18 @@ public class Chauffeur extends Employe {
 
 	@Column(name = "PERMIS")
 	private Boolean permis;
-
 	@Column(name = "TELEPHONE")
 	private String telephone;
 
+
 	
+
 	public Chauffeur() {
 
 	}
+
+
+	
 
 	public Chauffeur(String matricule, String nom, String prenom, String email, String motDePasse, String telephone,
 			String urlPhoto, Boolean permis) {
@@ -50,7 +54,9 @@ public class Chauffeur extends Employe {
 	public void setPermis(Boolean permis) {
 		this.permis = permis;
 	}
+
 	
+
 	/**
 	 * Getter
 	 * 

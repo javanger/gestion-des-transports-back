@@ -18,7 +18,6 @@ import javax.persistence.MappedSuperclass;
 public abstract class Employe {
 
 	@Id
-
 	@Column(name = "MATRICULE")
 	private String matricule;
 	@Column(name = "NOM")
