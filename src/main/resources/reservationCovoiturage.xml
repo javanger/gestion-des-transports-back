@@ -13,7 +13,8 @@
 		</property>
 		<property name="collaborateur">
 			<ref bean="collaborateur1"/>
-		</property>
+		</property>		
+		<property name="statusReservation" value="ANNULE"></property>
 	</bean>
 	
 	<bean id="reservationCovoiturage2" class="dev.entite.ReservationCovoiturage">
@@ -23,6 +24,7 @@
 		<property name="collaborateur">
 			<ref bean="collaborateur5"/>
 		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
 	</bean>
 
 </beans>
