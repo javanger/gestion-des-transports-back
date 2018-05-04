@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dev.entite.AnnonceCovoiturage;
 import dev.entite.dto.AnnonceCovoiturageDto;
+import dev.entite.dto.AnnonceListeDto;
 import dev.repository.AnnonceCovoiturageRepository;
 import dev.repository.CollaborateurRepository;
 import dev.repository.ReservationCovoiturageRepository;
@@ -33,6 +34,7 @@ public class AnnonceCovoiturageController {
 	@Autowired
 	private AnnonceCovoiturageRepository annonceCovoitRepo;
 	@Autowired
+
 	private ReservationCovoiturageRepository reservationCovoiturageRepo;
 	@Autowired
 	private VehiculePersonnelRepository vehiculeRepo;
@@ -41,16 +43,23 @@ public class AnnonceCovoiturageController {
 	@Autowired
 	private ModelMapper modelMapper;
 
+
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces")
 	public List<AnnonceCovoiturageDto> listerAnnonces() {
-		List<AnnonceCovoiturageDto> reservationsDto = annonceCovoitRepo.findAll().stream().map(r -> convertToDto(r))
+		List<AnnonceCovoiturageDto> annoncesDto = annonceCovoitRepo.findAll().stream().map(r -> convertToDto(r))
 				.collect(Collectors.toList());
-		return reservationsDto;
+		return annoncesDto;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
-	public List<AnnonceCovoiturage> listerAnnonces(@PathVariable String matriculeCollaborateur) {
-		return annonceCovoitRepo.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur));
+
+	public List<AnnonceListeDto> listerAnnonces(@PathVariable String matriculeCollaborateur) {
+		List<AnnonceListeDto> annoncesDto = annonceCovoitRepo
+				.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur)).stream()
+				.map(r -> convertDto(r))
+				.collect(Collectors.toList());
+		return annoncesDto;
+
 	}
 
 	@RequestMapping(method = RequestMethod.POST, path = "/annonces/creer")
@@ -70,8 +79,10 @@ public class AnnonceCovoiturageController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/detail/annonces/{id}")
+
 	public AnnonceCovoiturageDto detailsAnnonce(@PathVariable Integer id) {
 		AnnonceCovoiturageDto detailAnnonce = new AnnonceCovoiturageDto();
+
 		if (annonceCovoitRepo.findOne(id) != null) {
 			detailAnnonce = convertToDto(annonceCovoitRepo.findOne(id));
 		}
@@ -101,6 +112,11 @@ public class AnnonceCovoiturageController {
 	private AnnonceCovoiturage convertToEntity(AnnonceCovoiturageDto annonceDto) {
 		AnnonceCovoiturage annonce = modelMapper.map(annonceDto, AnnonceCovoiturage.class);
 		return annonce;
+	}
+
+	private AnnonceListeDto convertDto(AnnonceCovoiturage annonce) {
+		AnnonceListeDto annonceDto = modelMapper.map(annonce, AnnonceListeDto.class);
+		return annonceDto;
 	}
 
 }
