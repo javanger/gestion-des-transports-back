@@ -12,5 +12,6 @@
 	<import resource="classpath:vehiculeSociete.xml" />
 	<import resource="classpath:vehiculePersonnel.xml" />
 	<import resource="classpath:chauffeur.xml" />
+	<import resource="classpath:reservationVehiculeSociete.xml"/>
 
 </beans>

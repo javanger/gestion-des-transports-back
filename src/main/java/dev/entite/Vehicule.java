@@ -29,7 +29,6 @@ public abstract class Vehicule {
 	@Column(name = "NOMBRE_DE_PLACE")
 	private Integer nbPlaces;
 
-
 	public Vehicule() {
 	}
 
@@ -40,11 +39,6 @@ public abstract class Vehicule {
 		this.nbPlaces = nbPlaces;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Vehicule [id=" + id + ", immatriculation=" + immatriculation + ", marque=" + marque + ", modele="
@@ -127,7 +121,6 @@ public abstract class Vehicule {
 		this.modele = modele;
 	}
 
-
 	/**
 	 * Getter
 	 * 
@@ -146,6 +139,5 @@ public abstract class Vehicule {
 	public void setNbPlaces(Integer nbPlaces) {
 		this.nbPlaces = nbPlaces;
 	}
-
 
 }

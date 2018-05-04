@@ -17,6 +17,7 @@
 		<property name="marque" value="Renault"></property>
 		<property name="modele" value="Megane"></property>
 		<property name="nbPlaces" value="5"></property>
+		
 	</bean>
 	
 	<bean id="vehiculePersonnel3" class="dev.entite.VehiculePersonnel">

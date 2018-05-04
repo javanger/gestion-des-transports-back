@@ -50,7 +50,7 @@ public class AnnonceCovoiturageController {
 				.collect(Collectors.toList());
 		return annoncesDto;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
 
 	public List<AnnonceListeDto> listerAnnonces(@PathVariable String matriculeCollaborateur) {
@@ -88,7 +88,7 @@ public class AnnonceCovoiturageController {
 		}
 		return detailAnnonce;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.PUT, path = "status/annonces/{id}")
 	public void modifierStatut(@RequestBody AnnonceCovoiturageDto annonceDto) {
 

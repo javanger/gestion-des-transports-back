@@ -31,13 +31,11 @@ public abstract class Employe {
 	@Column(name = "URL_PHOTO")
 	private String urlPhoto;
 
-
 	public Employe() {
 
 	}
 
-	public Employe(String matricule, String nom, String prenom, String email, String motDePasse,
-			String urlPhoto) {
+	public Employe(String matricule, String nom, String prenom, String email, String motDePasse, String urlPhoto) {
 		this.matricule = matricule;
 		this.nom = nom;
 		this.prenom = prenom;
