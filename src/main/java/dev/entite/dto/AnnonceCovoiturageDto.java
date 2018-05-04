@@ -4,6 +4,7 @@
 package dev.entite.dto;
 
 import dev.entite.Collaborateur;
+import dev.entite.Status;
 import dev.entite.Vehicule;
 
 /**
@@ -15,9 +16,11 @@ public class AnnonceCovoiturageDto {
 	private Integer id;
 	private String adresseDepart;
 	private String adresseArrive;
+	private Integer nombrePlace;
 	private Vehicule vehicule;
 	private String date;
 	private Collaborateur auteurAnnonce;
+	private Status status;
 
 	/**
 	 * Getter
@@ -79,6 +82,25 @@ public class AnnonceCovoiturageDto {
 	/**
 	 * Getter
 	 * 
+	 * @return the nombrePlace
+	 */
+	public Integer getNombrePlace() {
+		return nombrePlace;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param nombrePlace
+	 *            the nombrePlace to set
+	 */
+	public void setNombrePlace(Integer nombrePlace) {
+		this.nombrePlace = nombrePlace;
+	}
+
+	/**
+	 * Getter
+	 * 
 	 * @return the vehicule
 	 */
 	public Vehicule getVehicule() {
@@ -131,6 +153,25 @@ public class AnnonceCovoiturageDto {
 	 */
 	public void setAuteurAnnonce(Collaborateur auteurAnnonce) {
 		this.auteurAnnonce = auteurAnnonce;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the status
+	 */
+	public Status getStatus() {
+		return status;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param status
+	 *            the status to set
+	 */
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 }
