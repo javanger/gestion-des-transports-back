@@ -19,7 +19,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  */
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = false)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -27,11 +27,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/collaborateur/**")
-				.access("hasRole('ROLE_COLLABORATEUR') and  hasRole('ROLE_ADMIN')").antMatchers("/admin/**")
-				.hasRole("ADMINISTRATEUR").antMatchers("/chauffeur/**")
-				.access("hasRole('ROLE_CHAUFFEUR') and	 hasRole('ROLE_ADMIN')").anyRequest().authenticated().and()
-				.formLogin().loginPage("http://localhost:4200/connexion").permitAll();
+		http.authorizeRequests()
+				// .antMatchers("/collaborateur/**")
+				// .access("hasRole('ROLE_COLLABORATEUR') and
+				// hasRole('ROLE_ADMIN')").antMatchers("/admin/**")
+				// .hasRole("ADMINISTRATEUR").antMatchers("/chauffeur/**")
+				// .access("hasRole('ROLE_CHAUFFEUR') and
+				// hasRole('ROLE_ADMIN')")
+				.anyRequest().permitAll();
 
 	}
 
