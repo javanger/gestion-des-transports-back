@@ -47,7 +47,7 @@ public class AnnonceCovoiturageController {
 				.collect(Collectors.toList());
 		return reservationsDto;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
 	public List<AnnonceCovoiturage> listerAnnonces(@RequestBody String matriculeCollaborateur) {
 		return annonceCovoitRepo.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur));
@@ -77,7 +77,7 @@ public class AnnonceCovoiturageController {
 		}
 		return detailAnnonce;
 	}
-	
+
 	private AnnonceCovoiturageDto convertToDto(AnnonceCovoiturage annonce) {
 		AnnonceCovoiturageDto annonceDto = modelMapper.map(annonce, AnnonceCovoiturageDto.class);
 		return annonceDto;

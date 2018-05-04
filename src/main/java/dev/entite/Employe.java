@@ -4,8 +4,6 @@
 package dev.entite;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -20,7 +18,6 @@ import javax.persistence.MappedSuperclass;
 public abstract class Employe {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MATRICULE")
 	private String matricule;
 	@Column(name = "NOM")
@@ -34,13 +31,11 @@ public abstract class Employe {
 	@Column(name = "URL_PHOTO")
 	private String urlPhoto;
 
-
 	public Employe() {
 
 	}
 
-	public Employe(String matricule, String nom, String prenom, String email, String motDePasse,
-			String urlPhoto) {
+	public Employe(String matricule, String nom, String prenom, String email, String motDePasse, String urlPhoto) {
 		this.matricule = matricule;
 		this.nom = nom;
 		this.prenom = prenom;
