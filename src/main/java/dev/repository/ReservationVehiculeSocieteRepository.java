@@ -11,7 +11,7 @@ import dev.entite.ReservationVehiculeSociete;
 import dev.entite.Vehicule;
 
 /**
- * @author ETY0004
+ * @author Lefebvre Valentin
  *
  */
 public interface ReservationVehiculeSocieteRepository extends JpaRepository<ReservationVehiculeSociete, Integer> {

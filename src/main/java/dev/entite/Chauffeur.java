@@ -15,7 +15,6 @@ public class Chauffeur extends Employe {
 
 	@Column(name = "PERMIS")
 	private Boolean permis;
-
 	@Column(name = "TELEPHONE")
 	private String telephone;
 
@@ -24,9 +23,11 @@ public class Chauffeur extends Employe {
 		super(matricule, nom, prenom, email, motDePasse, urlPhoto);
 		this.permis = permis;
 		this.telephone = telephone;
+
 	}
 
 	public Chauffeur() {
+		super();
 
 	}
 
@@ -43,6 +44,7 @@ public class Chauffeur extends Employe {
 	 */
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+
 	}
 
 	/**

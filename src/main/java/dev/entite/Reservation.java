@@ -20,7 +20,7 @@ import javax.persistence.MappedSuperclass;
 public abstract class Reservation {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
 	private Collaborateur collaborateur;

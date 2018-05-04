@@ -11,7 +11,7 @@ import dev.entite.Collaborateur;
 import dev.entite.ReservationCovoiturage;
 
 /**
- * @author ETY0004
+ * @author Lefebvre Valentin
  *
  */
 public interface ReservationCovoiturageRepository extends JpaRepository<ReservationCovoiturage, Integer> {

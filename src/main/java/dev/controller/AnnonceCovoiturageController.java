@@ -49,11 +49,11 @@ public class AnnonceCovoiturageController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
-	public List<AnnonceCovoiturage> listerAnnonces(@RequestBody String matriculeCollaborateur) {
+	public List<AnnonceCovoiturage> listerAnnonces(@PathVariable String matriculeCollaborateur) {
 		return annonceCovoitRepo.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur));
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, path = "/annonces/creer")
+	@RequestMapping(method = RequestMethod.POST, path = "/annonces/creer")
 	public void creerAnnonce(@RequestBody AnnonceCovoiturage annonce) {
 		AnnonceCovoiturage nouvelleAnnonce = new AnnonceCovoiturage(annonce.getAdresseDepart(),
 				annonce.getAdresseArrive(), annonce.getDuree(), annonce.getDistance(), annonce.getVehicule(),
@@ -69,13 +69,28 @@ public class AnnonceCovoiturageController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{id}")
-	public AnnonceCovoiturage detailsAnnonce(@PathVariable Integer id) {
-		AnnonceCovoiturage detailAnnonce = new AnnonceCovoiturage();
+	@RequestMapping(method = RequestMethod.GET, path = "/detail/annonces/{id}")
+	public AnnonceCovoiturageDto detailsAnnonce(@PathVariable Integer id) {
+		AnnonceCovoiturageDto detailAnnonce = new AnnonceCovoiturageDto();
 		if (annonceCovoitRepo.findOne(id) != null) {
-			detailAnnonce = annonceCovoitRepo.findOne(id);
+			detailAnnonce = convertToDto(annonceCovoitRepo.findOne(id));
 		}
 		return detailAnnonce;
+	}
+
+	@RequestMapping(method = RequestMethod.PUT, path = "status/annonces/{id}")
+	public void modifierStatut(@RequestBody AnnonceCovoiturageDto annonceDto) {
+
+		AnnonceCovoiturage modifierStatut = annonceCovoitRepo.findOne(annonceDto.getId());
+		modifierStatut.setStatusAnnonce(annonceDto.getStatus());
+		annonceCovoitRepo.save(modifierStatut);
+	}
+
+	@RequestMapping(method = RequestMethod.PUT, path = "/annonces/{id}")
+	public void modifierAnnonce(@RequestBody AnnonceCovoiturageDto annonceDto) {
+		AnnonceCovoiturage modifierAnnonce = annonceCovoitRepo.findOne(annonceDto.getId());
+		modifierAnnonce.setNombrePlace(annonceDto.getNombrePlace());
+		annonceCovoitRepo.save(modifierAnnonce);
 	}
 
 	private AnnonceCovoiturageDto convertToDto(AnnonceCovoiturage annonce) {
