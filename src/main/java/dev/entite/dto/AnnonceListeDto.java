@@ -3,24 +3,44 @@
  */
 package dev.entite.dto;
 
-import dev.entite.Collaborateur;
+import java.util.List;
+
 import dev.entite.Status;
-import dev.entite.Vehicule;
 
 /**
- * @author GOBERT Guillaume
+ * @author AHSENE Victor
  *
  */
-public class AnnonceCovoiturageDto {
-	
+public class AnnonceListeDto {
+
 	private Integer id;
 	private String adresseDepart;
 	private String adresseArrive;
-	private Integer nombrePlace;
-	private Vehicule vehicule;
+
+
 	private String date;
-	private Collaborateur auteurAnnonce;
+
 	private Status status;
+	private List<ReservationNombreDto> reservations;
+
+	/**
+	 * Getter
+	 * 
+	 * @return the reservations
+	 */
+	public List<ReservationNombreDto> getReservations() {
+		return reservations;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param reservations
+	 *            the reservations to set
+	 */
+	public void setReservations(List<ReservationNombreDto> reservations) {
+		this.reservations = reservations;
+	}
 
 	/**
 	 * Getter
@@ -79,24 +99,7 @@ public class AnnonceCovoiturageDto {
 		this.adresseArrive = adresseArrive;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the vehicule
-	 */
-	public Vehicule getVehicule() {
-		return vehicule;
-	}
 
-	/**
-	 * Setter
-	 * 
-	 * @param vehicule
-	 *            the vehicule to set
-	 */
-	public void setVehicule(Vehicule vehicule) {
-		this.vehicule = vehicule;
-	}
 
 	/**
 	 * Getter
@@ -117,43 +120,6 @@ public class AnnonceCovoiturageDto {
 		this.date = date;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the auteurAnnonce
-	 */
-	public Collaborateur getAuteurAnnonce() {
-		return auteurAnnonce;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param auteurAnnonce
-	 *            the auteurAnnonce to set
-	 */
-	public void setAuteurAnnonce(Collaborateur auteurAnnonce) {
-		this.auteurAnnonce = auteurAnnonce;
-	}
-
-	/**
-	 * Getter
-	 * 
-	 * @return the nombrePlace
-	 */
-	public Integer getNombrePlace() {
-		return nombrePlace;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param nombrePlace
-	 *            the nombrePlace to set
-	 */
-	public void setNombrePlace(Integer nombrePlace) {
-		this.nombrePlace = nombrePlace;
-	}
 
 	/**
 	 * Getter
