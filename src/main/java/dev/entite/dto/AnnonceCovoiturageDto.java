@@ -79,24 +79,6 @@ public class AnnonceCovoiturageDto {
 		this.adresseArrive = adresseArrive;
 	}
 
-	/**
-	 * Getter
-	 * 
-	 * @return the nombrePlace
-	 */
-	public Integer getNombrePlace() {
-		return nombrePlace;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param nombrePlace
-	 *            the nombrePlace to set
-	 */
-	public void setNombrePlace(Integer nombrePlace) {
-		this.nombrePlace = nombrePlace;
-	}
 
 	/**
 	 * Getter
@@ -158,7 +140,6 @@ public class AnnonceCovoiturageDto {
 	/**
 	 * Getter
 	 * 
-<<<<<<< HEAD
 	 * @return the nombrePlace
 	 */
 	public Integer getNombrePlace() {
@@ -178,8 +159,6 @@ public class AnnonceCovoiturageDto {
 	/**
 	 * Getter
 	 * 
-=======
->>>>>>> 6964c1612ef9c00eb0a9422aa53e584d3ffcdd1d
 	 * @return the status
 	 */
 	public Status getStatus() {
