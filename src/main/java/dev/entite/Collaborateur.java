@@ -16,9 +16,11 @@ public class Collaborateur extends Employe {
 	@Column(name = "ADMINISTRATEUR")
 	private Boolean administrateur;
 
-	private Collaborateur() {
-		super();
+
+	public Collaborateur() {
+
 	}
+
 
 	public Collaborateur(String matricule, String nom, String prenom, String email, String motDePasse, String urlPhoto,
 			Boolean administrateur) {
@@ -27,6 +29,11 @@ public class Collaborateur extends Employe {
 	}
 
 	/**
+	 * 
+	 * Getter
+	 * 
+	 * 
+	 * 
 	 * @return the administrateur
 	 */
 	public Boolean getAdministrateur() {
@@ -34,6 +41,11 @@ public class Collaborateur extends Employe {
 	}
 
 	/**
+	 * 
+	 * Setter
+	 * 
+	 * 
+	 * 
 	 * @param administrateur
 	 *            the administrateur to set
 	 */
