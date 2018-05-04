@@ -49,7 +49,6 @@ public class AnnonceCovoiturageController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/annonces/{matriculeCollaborateur}")
-	public List<AnnonceCovoiturage> listerAnnonces(@RequestBody String matriculeCollaborateur) {
 	public List<AnnonceCovoiturage> listerAnnonces(@PathVariable String matriculeCollaborateur) {
 		return annonceCovoitRepo.findByAuteurAnnonce(collaborateurRepo.findOne(matriculeCollaborateur));
 	}
