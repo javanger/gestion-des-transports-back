@@ -18,8 +18,8 @@ public class Chauffeur extends Employe {
 	@Column(name = "TELEPHONE")
 	private String telephone;
 
-	public Chauffeur(String matricule, String nom, String prenom, String email, String motDePasse, String telephone,
-			String urlPhoto, Boolean permis) {
+	public Chauffeur(String matricule, String nom, String prenom, String email, String motDePasse, String urlPhoto,
+			Boolean permis) {
 		super(matricule, nom, prenom, email, motDePasse, urlPhoto);
 		this.permis = permis;
 		this.telephone = telephone;
