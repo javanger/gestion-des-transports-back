@@ -9,22 +9,18 @@
 		<property name="immatriculation" value="22-ABCD-44"></property>
 		<property name="marque" value="Toyota"></property>
 		<property name="modele" value="Yaris"></property>
-		<property name="nbPlaces" value="5"></property>
 	</bean>
 	
 	<bean id="vehiculePersonnel2" class="dev.entite.VehiculePersonnel">
 		<property name="immatriculation" value="54-ABCD-63"></property>
 		<property name="marque" value="Renault"></property>
 		<property name="modele" value="Megane"></property>
-		<property name="nbPlaces" value="5"></property>
-		
 	</bean>
 	
 	<bean id="vehiculePersonnel3" class="dev.entite.VehiculePersonnel">
 		<property name="immatriculation" value="23-ABCD-47"></property>
 		<property name="marque" value="Peugeot"></property>
 		<property name="modele" value="308"></property>
-		<property name="nbPlaces" value="2"></property>
 	</bean>
 
 </beans>

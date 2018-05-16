@@ -28,7 +28,7 @@ public class VehiculePersonnelController {
 	@RequestMapping(method = RequestMethod.POST, path = "/vehiculePersonnel/creer")
 	public void submitForm(@RequestBody VehiculePersonnel vehiculePersonnel) {
 		VehiculePersonnel nouveauVehiuculePersonnel = new VehiculePersonnel(vehiculePersonnel.getImmatriculation(),
-				vehiculePersonnel.getMarque(), vehiculePersonnel.getModele(), vehiculePersonnel.getNbPlaces());
+				vehiculePersonnel.getMarque(), vehiculePersonnel.getModele());
 		if (vehiculePersonnelRepository.findById(nouveauVehiuculePersonnel.getId()) == null)
 			vehiculePersonnelRepository.save(vehiculePersonnel);
 	}

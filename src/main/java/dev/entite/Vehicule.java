@@ -26,23 +26,19 @@ public abstract class Vehicule {
 	@Column(name = "MODELE")
 	private String modele;
 
-	@Column(name = "NOMBRE_DE_PLACE")
-	private Integer nbPlaces;
-
 	public Vehicule() {
 	}
 
-	public Vehicule(String immatriculation, String marque, String modele, Integer nbPlaces) {
+	public Vehicule(String immatriculation, String marque, String modele) {
 		this.immatriculation = immatriculation;
 		this.marque = marque;
 		this.modele = modele;
-		this.nbPlaces = nbPlaces;
 	}
 
 	@Override
 	public String toString() {
 		return "Vehicule [id=" + id + ", immatriculation=" + immatriculation + ", marque=" + marque + ", modele="
-				+ modele + ", nbPlaces=" + nbPlaces + "]";
+				+ modele + "]";
 	}
 
 	/**
@@ -119,25 +115,6 @@ public abstract class Vehicule {
 	 */
 	public void setModele(String modele) {
 		this.modele = modele;
-	}
-
-	/**
-	 * Getter
-	 * 
-	 * @return the nbPlaces
-	 */
-	public Integer getNbPlaces() {
-		return nbPlaces;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param nbPlaces
-	 *            the nbPlaces to set
-	 */
-	public void setNbPlaces(Integer nbPlaces) {
-		this.nbPlaces = nbPlaces;
 	}
 
 }
