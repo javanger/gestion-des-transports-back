@@ -15,13 +15,17 @@ public class VehiculeSociete extends Vehicule {
 	@Column(name = "URL_PHOTO")
 	private String urlPhoto;
 
+	@Column(name = "NOMBRE_DE_PLACE")
+	private Integer nbPlaces;
+
 	public VehiculeSociete() {
 
 	}
 
 	public VehiculeSociete(String immatriculation, String marque, String modele, CategorieVehicule categorie, Integer nbPlaces,
 			String urlPhoto){
-		super(immatriculation, marque, modele, nbPlaces);
+		super(immatriculation, marque, modele);
+		this.nbPlaces = nbPlaces;
 		this.categorie = categorie;
 		this.urlPhoto = urlPhoto;
 	}
@@ -63,6 +67,21 @@ public class VehiculeSociete extends Vehicule {
 	 */
 	public void setUrlPhoto(String urlPhoto) {
 		this.urlPhoto = urlPhoto;
+	}
+
+	/**
+	 * @return the nbPlaces
+	 */
+	public Integer getNbPlaces() {
+		return nbPlaces;
+	}
+
+	/**
+	 * @param nbPlaces
+	 *            the nbPlaces to set
+	 */
+	public void setNbPlaces(Integer nbPlaces) {
+		this.nbPlaces = nbPlaces;
 	}
 
 }
