@@ -89,13 +89,15 @@ public class AnnonceCovoiturageController {
 		return detailAnnonce;
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, path = "status/annonces/{id}")
-	public void modifierStatut(@RequestBody AnnonceCovoiturageDto annonceDto) {
+	@RequestMapping(method = RequestMethod.POST, path = "/annonces/{id}/status")
+	public void modifierStatut(@PathVariable Integer id, @RequestBody AnnonceCovoiturageDto annonceDto) {
 
-		AnnonceCovoiturage modifierStatut = annonceCovoitRepo.findOne(annonceDto.getId());
+		AnnonceCovoiturage modifierStatut = annonceCovoitRepo.findOne(id);
 		modifierStatut.setStatusAnnonce(annonceDto.getStatus());
 		annonceCovoitRepo.save(modifierStatut);
 	}
+
+
 
 	@RequestMapping(method = RequestMethod.PUT, path = "/annonces/{id}")
 	public void modifierAnnonce(@RequestBody AnnonceCovoiturageDto annonceDto) {
