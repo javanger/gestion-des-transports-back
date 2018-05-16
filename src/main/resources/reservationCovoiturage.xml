@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
@@ -9,22 +8,127 @@
 
 	<bean id="reservationCovoiturage1" class="dev.entite.ReservationCovoiturage">
 		<property name="annonce">
-			<ref bean="annonceCovoiturage1"/>
+			<ref bean="annonceCovoiturage1" />
 		</property>
 		<property name="collaborateur">
-			<ref bean="collaborateur1"/>
-		</property>		
+			<ref bean="collaborateur1" />
+		</property>
 		<property name="statusReservation" value="ANNULE"></property>
 	</bean>
-	
+
 	<bean id="reservationCovoiturage2" class="dev.entite.ReservationCovoiturage">
 		<property name="annonce">
-			<ref bean="annonceCovoiturage1"/>
+			<ref bean="annonceCovoiturage1" />
 		</property>
 		<property name="collaborateur">
-			<ref bean="collaborateur5"/>
+			<ref bean="collaborateur5" />
 		</property>
 		<property name="statusReservation" value="EN_COURS"></property>
 	</bean>
+
+	<bean id="reservationCovoiturage3" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage3" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur1" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage4" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage3" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur4" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage5" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage3" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur5" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage6" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage4" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur1" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage7" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage4" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur4" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage8" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage4" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur4" />
+		</property>
+		<property name="statusReservation" value="EN_COURS"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage9" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage5" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur4" />
+		</property>
+		<property name="statusReservation" value="TERMINE"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage10" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage5" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur3" />
+		</property>
+		<property name="statusReservation" value="TERMINE"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage11" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage6" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur1" />
+		</property>
+		<property name="statusReservation" value="TERMINE"></property>
+	</bean>
+
+	<bean id="reservationCovoiturage12" class="dev.entite.ReservationCovoiturage">
+		<property name="annonce">
+			<ref bean="annonceCovoiturage6" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur5" />
+		</property>
+		<property name="statusReservation" value="TERMINE"></property>
+	</bean>
+
+
+
+
+
 
 </beans>
