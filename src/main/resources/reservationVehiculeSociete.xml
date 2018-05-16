@@ -4,14 +4,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-<import resource="classpath:chauffeur.xml" />
-<import resource="classpath:vehiculeSociete.xml" />
- 
+	<import resource="classpath:chauffeur.xml" />
+	<import resource="classpath:vehiculeSociete.xml" />
+	<import resource="classpath:collaborateur.xml" />
+
 	<bean id="reservationVehiculeSociete1" class="dev.entite.ReservationVehiculeSociete">
 		<property name="dateDepart" value="01/01/2018 9:11"></property>
 		<property name="dateRetour" value="03/01/2018 11:11"></property>
 		<property name="vehiculeSociete">
 			<ref bean="vehiculeSociete1" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur1" />
 		</property>
 		<property name="chauffeur">
 			<ref bean="chauffeur1" />
@@ -24,6 +28,9 @@
 		<property name="vehiculeSociete">
 			<ref bean="vehiculeSociete1" />
 		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur2" />
+		</property>
 		<property name="chauffeur">
 			<ref bean="chauffeur1" />
 		</property>
@@ -35,6 +42,9 @@
 		<property name="vehiculeSociete">
 			<ref bean="vehiculeSociete2" />
 		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur3" />
+		</property>
 		<property name="chauffeur">
 			<ref bean="chauffeur2" />
 		</property>
@@ -45,6 +55,9 @@
 		<property name="dateRetour" value="07/07/2018 18:56"></property>
 		<property name="vehiculeSociete">
 			<ref bean="vehiculeSociete2" />
+		</property>
+		<property name="collaborateur">
+			<ref bean="collaborateur4" />
 		</property>
 		<property name="chauffeur">
 			<ref bean="chauffeur2" />
