@@ -25,8 +25,8 @@ public class VehiculeSociete extends Vehicule {
 	public VehiculeSociete(String immatriculation, String marque, String modele, CategorieVehicule categorie, Integer nbPlaces,
 			String urlPhoto){
 		super(immatriculation, marque, modele);
-		this.nbPlaces = nbPlaces;
 		this.categorie = categorie;
+		this.nbPlaces = nbPlaces;
 		this.urlPhoto = urlPhoto;
 	}
 
