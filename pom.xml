@@ -101,7 +101,7 @@
 		<profile>
 			<id>dev-mysql</id>
 			<activation>
-				<activeByDefault>false</activeByDefault>
+				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
 				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
@@ -123,7 +123,7 @@
 		<profile>
 			<id>prod</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
